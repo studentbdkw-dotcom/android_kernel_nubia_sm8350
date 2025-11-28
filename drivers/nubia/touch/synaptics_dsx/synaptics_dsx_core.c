@@ -5546,7 +5546,7 @@ static int synaptics_rmi4_probe(struct platform_device *pdev)
 	INIT_DELAYED_WORK(&rmi4_data->forced_resume_dw, synaptics_nubiaForcedResume);
 #endif
 	g_rmi4_data = rmi4_data;
-	pr_info("%s: end!\n", __func__);
+	pr_info("end!\n");
 	return retval;
 
 err_sysfs:
