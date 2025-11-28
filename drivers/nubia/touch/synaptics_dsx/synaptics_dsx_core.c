@@ -5394,7 +5394,7 @@ static int synaptics_rmi4_probe(struct platform_device *pdev)
 
 	retval = synaptics_request_power_gpio(rmi4_data);
 	if (retval < 0) {
-		pr_info("%s: failed to request power gpio\n");
+		pr_info("failed to request power gpio\n");
 		goto err_enable_reg;
 	}
 
@@ -6057,7 +6057,7 @@ static int synaptics_rmi4_resume(struct device *dev)
 	if (rmi4_data->enable_gesture&&!(rmi4_data->gesture_flag)&&
 		!(rmi4_data->tp_mode_state&FP_ENTER)) {
 		rmi4_data->enable_gesture = 0;
-		ts_err(": clear fp gesture fp_mode=%d",
+		ts_err("%s: clear fp gesture fp_mode=%d", __func__, fp_mode);
 			rmi4_data->tp_mode_state&FP_ENTER);
 	} else if(rmi4_data->shortcuts_flag&&rmi4_data->game_mode) {
 		ts_err(":enable TP 240Hz rate");
